@@ -1,53 +1,102 @@
 <template>
   <div>
-    <nav
-      class="navbar header has-shadow is-primary"
-      role="navigation"
-      aria-label="main navigation"
+    <b-navbar
+      type="is-primary"
+      has-shadow
+      wrapper-class="container"
     >
-      <div class="navbar-brand">
-        <a
-          class="navbar-item"
-          href="/"
+      <template slot="brand">
+        <b-navbar-item
+          tag="router-link"
+          :to="{ path: '/' }"
+          class="has-background-light"
         >
           <img
-            src="~assets/wordmark/turtlecoin_wordmark_white.png"
+            src="~assets/wordmark/turtlecoin_wordmark_color.png"
             alt="TurtleCoin"
-            height="36"
           >
-        </a>
+        </b-navbar-item>
+      </template>
 
-        <div class="navbar-burger">
-          <span />
-          <span />
-          <span />
-        </div>
-      </div>
-    </nav>
+      <template slot="start" />
 
-    <section class="main-content columns">
-      <aside class="column is-2 section">
-        <p class="menu-label is-hidden-touch">
-          General
-        </p>
-        <ul class="menu-list">
-          <li
-            v-for="(item, key) of items"
+      <template slot="end">
+        <b-navbar-item href="#Features">
+          Features
+        </b-navbar-item>
+        <b-navbar-item href="#Story">
+          Story
+        </b-navbar-item>
+        <b-navbar-item href="#Download">
+          Download
+        </b-navbar-item>
+        <b-navbar-item href="#Support">
+          Support
+        </b-navbar-item>
+      </template>
+    </b-navbar>
+
+    <b-navbar
+      type="is-light"
+      has-shadow
+      wrapper-class="container"
+    >
+      <template slot="start">
+        <b-navbar-item
+          href="https://blog.turtlecoin.lol/archives/this-week-in-turtlecoin-september-17-2019/"
+        >
+          <b-tag
+            type="is-info"
+          >
+            This Week In TurtleCoin (September 17, 2019)
+          </b-tag>
+        </b-navbar-item>
+      </template>
+
+      <template slot="end">
+        <b-navbar-item href="#Item">
+          Sub Item
+        </b-navbar-item>
+      </template>
+    </b-navbar>
+
+    <b-navbar
+      type="is-dark"
+      fixed-bottom
+      has-shadow
+      wrapper-class="container"
+    >
+      <template slot="start">
+        <b-navbar-dropdown
+          label="Resources"
+          hoverable
+          class="has-dropdown-up"
+        >
+          <b-navbar-item
+            v-for="(resource, key) of resources"
             :key="key"
+            :href="resource.link"
           >
-            <nuxt-link
-              :to="item.to"
-              exact-active-class="is-active"
-            >
-              <b-icon :icon="item.icon" /> {{ item.title }}
-            </nuxt-link>
-          </li>
-        </ul>
-      </aside>
+            {{ resource.title }}
+          </b-navbar-item>
+        </b-navbar-dropdown>
+      </template>
 
-      <div class="container column is-10">
-        <nuxt />
-      </div>
+      <template slot="end">
+        <b-navbar-dropdown
+          label="EN"
+          hoverable
+          class="has-dropdown-up"
+        >
+          <b-navbar-item>EN</b-navbar-item>
+        </b-navbar-dropdown>
+      </template>
+    </b-navbar>
+
+    <section
+      class="main-content container"
+    >
+      <nuxt />
     </section>
   </div>
 </template>
@@ -56,16 +105,27 @@
 export default {
   data () {
     return {
-      items: [
+      languages: [],
+      resources: [
         {
-          title: 'Home',
-          icon: 'home',
-          to: { name: 'index' }
+          title: 'Explorer',
+          link: 'https://explorer.turtlecoin.lol',
+          icon: 'home'
         },
         {
-          title: 'Inspire',
-          icon: 'lightbulb',
-          to: { name: 'inspire' }
+          title: 'Documentation',
+          link: 'https://docs.turtlecoin.lol',
+          icon: 'home'
+        },
+        {
+          title: 'Developer Blog',
+          link: 'https://blog.turtlecoin.lol',
+          icon: 'home'
+        },
+        {
+          title: 'Developer Resources',
+          link: 'https://docs.turtlecoin.lol/developer/resources',
+          icon: 'home'
         }
       ]
     }
