@@ -47,15 +47,6 @@ export default {
   name: 'HomePage',
   components: {
     Card
-  },
-  head () {
-    return {
-      title: 'TurtleCoin.lol - A Fun, Fast, and Easy Way to Send Money To Friends and Businesses',
-      meta: [
-        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-        { hid: 'description', name: 'description', content: 'TurtleCoin is a fun way to send money privately to friends or businesses. TurtleCoin is a community-developed, open source cryptocurrency that is easy to mine, and has multiple wallet interfaces.' }
-      ]
-    }
   }
 }
 </script>
