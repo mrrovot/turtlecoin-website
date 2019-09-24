@@ -48,7 +48,7 @@
           href="https://blog.turtlecoin.lol/archives/this-week-in-turtlecoin-september-17-2019/"
         >
           <b-tag
-            type="is-info"
+            type="is-warning"
           >
             This Week In TurtleCoin (September 17, 2019)
           </b-tag>
