@@ -28,7 +28,7 @@
         <b-navbar-item tag="nuxt-link" to="/story">
           {{ $t('links.story') }}
         </b-navbar-item>
-        <b-navbar-item tag="nuxt-link" to="/dowwnload">
+        <b-navbar-item tag="nuxt-link" to="/download">
           {{ $t('links.download') }}
         </b-navbar-item>
 
