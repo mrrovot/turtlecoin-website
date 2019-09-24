@@ -66,13 +66,11 @@ export default {
         file: 'en.js'
       },
       {
-        code: 'es',
-        iso: 'es-ES'
+        name: 'Nederlands',
+        code: 'nl',
+        iso: 'NL',
+        file: 'nl.js'
       },
-      {
-        code: 'fr',
-        iso: 'fr-FR'
-      }
     ],
     langDir: 'locales/',
     seo: true,

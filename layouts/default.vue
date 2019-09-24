@@ -70,7 +70,7 @@
     >
       <template slot="start">
         <b-navbar-dropdown
-          label="Resources"
+          :label="$t('resources.title')"
           hoverable
           class="has-dropdown-up"
         >
@@ -86,7 +86,8 @@
 
       <template slot="end">
         <b-navbar-dropdown
-          label="EN"
+          :value="this.$i18n.locale"
+          :label="$t('language')"
           hoverable
           class="has-dropdown-up"
         >
@@ -95,8 +96,9 @@
             :key="locale.code"
             tag="nuxt-link"
             :to="switchLocalePath(locale.code)"
+            :value="locale.code"
           >
-            {{ locale.name }}
+            {{locale.name}}
           </b-navbar-item>
         </b-navbar-dropdown>
       </template>

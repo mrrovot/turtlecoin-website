@@ -8,9 +8,11 @@ export default {
     support: 'Support'
   },
   resources: {
+    title: 'Resources',
     blog: 'Development Blog',
     explorer: 'Block Explorer',
     docs: 'User Documentation',
     dev: 'Dev Resources'
-  }
+  },
+  language: 'Language'
 }
