@@ -21,17 +21,19 @@
       <template slot="start" />
 
       <template slot="end">
-        <b-navbar-item href="#Features">
-          Features
+        <b-navbar-item tag="nuxt-link" to="/features">
+          {{ $t('links.features') }}
         </b-navbar-item>
-        <b-navbar-item href="#Story">
-          Story
+
+        <b-navbar-item tag="nuxt-link" to="/story">
+          {{ $t('links.story') }}
         </b-navbar-item>
-        <b-navbar-item href="#Download">
-          Download
+        <b-navbar-item tag="nuxt-link" to="/dowwnload">
+          {{ $t('links.download') }}
         </b-navbar-item>
-        <b-navbar-item href="#Support">
-          Support
+
+        <b-navbar-item tag="nuxt-link" to="/support">
+          {{ $t('links.support') }}
         </b-navbar-item>
       </template>
     </b-navbar>
@@ -88,7 +90,14 @@
           hoverable
           class="has-dropdown-up"
         >
-          <b-navbar-item>EN</b-navbar-item>
+          <b-navbar-item
+            v-for="locale of locales"
+            :key="locale.code"
+            tag="nuxt-link"
+            :to="switchLocalePath(locale.code)"
+          >
+            {{ locale.name }}
+          </b-navbar-item>
         </b-navbar-dropdown>
       </template>
     </b-navbar>
@@ -105,29 +114,30 @@
 export default {
   data () {
     return {
-      languages: [],
       resources: [
         {
-          title: 'Explorer',
-          link: 'https://explorer.turtlecoin.lol',
-          icon: 'home'
+          title: this.$i18n.t('resources.blog'),
+          link: 'https://blog.turtlecoin.lol'
         },
         {
-          title: 'Documentation',
-          link: 'https://docs.turtlecoin.lol',
-          icon: 'home'
+          title: this.$i18n.t('resources.explorer'),
+          link: 'https://explorer.turtlecoin.lol'
+        },
+
+        {
+          title: this.$i18n.t('resources.docs'),
+          link: 'https://docs.turtlecoin.lol'
         },
         {
-          title: 'Developer Blog',
-          link: 'https://blog.turtlecoin.lol',
-          icon: 'home'
-        },
-        {
-          title: 'Developer Resources',
-          link: 'https://docs.turtlecoin.lol/developer/resources',
-          icon: 'home'
+          title: this.$i18n.t('resources.dev'),
+          link: 'https://docs.turtlecoin.lol/developer/resources'
         }
       ]
+    }
+  },
+  computed: {
+    locales () {
+      return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
     }
   }
 }

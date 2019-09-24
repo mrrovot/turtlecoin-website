@@ -43,7 +43,8 @@ export default {
   modules: [
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    'nuxt-i18n'
   ],
   /*
   ** Build configuration
@@ -54,5 +55,27 @@ export default {
     */
     extend (config, ctx) {
     }
+  },
+  i18n: {
+    defaultLocale: 'en',
+    locales: [
+      {
+        name: 'English',
+        code: 'en',
+        iso: 'en-US',
+        file: 'en.js'
+      },
+      {
+        code: 'es',
+        iso: 'es-ES'
+      },
+      {
+        code: 'fr',
+        iso: 'fr-FR'
+      }
+    ],
+    langDir: 'locales/',
+    seo: true,
+    lazy: true
   }
 }
