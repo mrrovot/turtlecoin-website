@@ -11,9 +11,9 @@
           href="/"
         >
           <img
-            src="~assets/buefy.png"
-            alt="Buefy"
-            height="28"
+            src="~assets/wordmark/turtlecoin_wordmark_white.png"
+            alt="TurtleCoin"
+            height="36"
           >
         </a>
 
