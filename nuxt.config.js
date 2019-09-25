@@ -23,12 +23,17 @@ export default {
   ** Global CSS
   */
   css: [
-    '@/assets/turtle-it.scss'
+    '@/assets/turtle-it.scss',
+    'leaflet/dist/leaflet.css'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    {
+      src: '~/plugins/leaflet',
+      ssr: false
+    }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -70,7 +75,7 @@ export default {
         code: 'nl',
         iso: 'NL',
         file: 'nl.js'
-      },
+      }
     ],
     langDir: 'locales/',
     seo: true,

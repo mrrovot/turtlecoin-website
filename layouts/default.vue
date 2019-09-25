@@ -98,7 +98,7 @@
             :to="switchLocalePath(locale.code)"
             :value="locale.code"
           >
-            {{locale.name}}
+            {{ locale.name }}
           </b-navbar-item>
         </b-navbar-dropdown>
       </template>
