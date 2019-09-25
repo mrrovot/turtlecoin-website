@@ -9,6 +9,7 @@ import Map from '~/components/Map'
 
 export default {
   name: 'HomePage',
+  layout: 'default_fullwidth',
   components: {
     Map
   }
