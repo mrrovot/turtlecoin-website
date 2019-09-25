@@ -2,6 +2,14 @@
 
 > TurtleCoin website build with nuxt.js for serverless deployment.
 
+## To-Do
+- Locales
+- Interactive Node Map - Fexra working on this
+- Swanson Assets - Shelly working on this
+- Social Media Icons (top right second sub menu)
+- Dynamic latest blog news loading
+- Pages (The Story, Features, Spec, Download)
+
 ## Build Setup
 
 ``` bash
