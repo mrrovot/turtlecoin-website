@@ -13,11 +13,10 @@
   },
   "dependencies": {
     "@nuxtjs/pwa": "^3.0.0-0",
-    "leaflet": "^1.5.1",
     "nuxt": "^2.0.0",
     "nuxt-buefy": "^0.3.2",
     "nuxt-i18n": "^6.2.1",
-    "vue2-leaflet": "^2.2.1"
+    "vue-d3-network": "^0.1.28"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",

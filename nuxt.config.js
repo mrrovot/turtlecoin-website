@@ -24,16 +24,12 @@ export default {
   */
   css: [
     '@/assets/turtle-it.scss',
-    'leaflet/dist/leaflet.css'
+    'vue-d3-network/dist/vue-d3-network.css'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    {
-      src: '~/plugins/leaflet',
-      ssr: false
-    }
   ],
   /*
   ** Nuxt.js dev-modules

@@ -1,39 +1,48 @@
 <template>
   <div>
-    <b-button variant="danger" @click="logPosition">
-      Log position
-    </b-button>
-    <no-ssr>
-      <l-map class="mini-map" :zoom="13" :center="position">
-        <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
-        <l-marker :lat-lng="position" :draggable="draggable">
-          <l-popup :content="popupContent" />
-        </l-marker>
-      </l-map>
-    </no-ssr>
+    <d3-network :net-nodes="nodes" :net-links="links" :options="options" />
   </div>
 </template>
 
 <script>
+import D3Network from 'vue-d3-network'
+
 export default {
-  data: () => ({
-    position: [55.607741796855734, 13.018133640289308],
-    draggable: true,
-    popupContent: 'Sentian HQ'
-  }),
-  methods: {
-    logPosition () {
-      console.log(this.position)
+  components: {
+    D3Network
+  },
+  data () {
+    return {
+      nodes: [
+        { id: 1, name: 'my node 1' },
+        { id: 2, name: 'my node 2' },
+        { id: 3, _color: 'orange' },
+        { id: 4 },
+        { id: 5 },
+        { id: 6 },
+        { id: 7 },
+        { id: 8 },
+        { id: 9 }
+      ],
+      links: [
+        { sid: 1, tid: 2, _color: 'red' },
+        { sid: 2, tid: 8, _color: 'f0f' },
+        { sid: 3, tid: 4, _color: 'rebeccapurple' },
+        { sid: 4, tid: 5 },
+        { sid: 5, tid: 6 },
+        { sid: 7, tid: 8 },
+        { sid: 5, tid: 8 },
+        { sid: 3, tid: 8 },
+        { sid: 7, tid: 9 }
+      ],
+      options:
+      {
+        force: 3000,
+        nodeSize: 20,
+        nodeLabels: true,
+        linkWidth: 5
+      }
     }
   }
 }
 </script>
-
-<style src="leaflet/dist/leaflet.css">
-</style>
-<style >
-.mini-map {
-  width: 100%;
-  height: 600px !important;
-}
-</style>
